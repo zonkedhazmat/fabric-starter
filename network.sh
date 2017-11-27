@@ -7,10 +7,8 @@ starttime=$(date +%s)
 : ${IP_ORDERER:="54.234.201.67"}
 : ${ORG1:="a"}
 : ${ORG2:="b"}
-: ${ORG3:="c"}
 : ${IP1:="54.86.191.160"}
 : ${IP2:="54.243.0.168"}
-: ${IP3:="54.211.142.174"}
 
 WGET_OPTS="--verbose -N"
 CLI_TIMEOUT=10000
