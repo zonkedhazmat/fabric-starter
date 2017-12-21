@@ -3,11 +3,11 @@
 starttime=$(date +%s)
 
 # defaults; export these variables before executing this script
-: ${DOMAIN:="example.com"}
+: ${DOMAIN:="houstonkemp.com"}
 : ${IP_ORDERER:="10.152.0.6"}
-: ${ORG1:="a"}
-: ${ORG2:="b"}
-: ${ORG2:="c"}
+: ${ORG1:="houstonkemp"}
+: ${ORG2:="austrac"}
+: ${ORG3:="acic"}
 : ${IP1:="10.152.0.2"}
 : ${IP2:="10.152.0.3"}
 : ${IP3:="10.152.0.5"}
