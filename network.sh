@@ -721,6 +721,19 @@ elif [ "${MODE}" == "up-2" ]; then
   downloadChannelBlockFile ${ORG2} ${ORG1} "${ORG1}-${ORG2}"
   joinWarmUp ${ORG2} "${ORG1}-${ORG2}" ${CHAINCODE_BILATERAL_NAME}
 
+elif [ "${MODE}" == "up-3" ]; then
+  downloadArtifactsMember ${ORG3} common "${ORG1}-${ORG3}" "${ORG2}-${ORG3}"
+  dockerComposeUp ${ORG3}
+  installAll ${ORG3}
+
+  downloadChannelBlockFile ${ORG3} ${ORG1} common
+  joinWarmUp ${ORG3} common ${CHAINCODE_COMMON_NAME}
+
+  downloadChannelBlockFile ${ORG3} ${ORG2} "${ORG2}-${ORG3}"
+  joinWarmUp ${ORG3} "${ORG2}-${ORG3}" ${CHAINCODE_BILATERAL_NAME}
+
+  downloadChannelBlockFile ${ORG3} ${ORG1} "${ORG1}-${ORG3}"
+  joinWarmUp ${ORG3} "${ORG1}-${ORG3}" ${CHAINCODE_BILATERAL_NAME}
 
 elif [ "${MODE}" == "logs" ]; then
   logs ${ORG}
